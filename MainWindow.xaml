@@ -1,0 +1,122 @@
+<Window x:Class="prak3_var3_Vysotskiy.MainWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ Title="Ремонт победный" Height="760" Width="1120"
+ MinHeight="650" MinWidth="900" WindowStartupLocation="CenterScreen"
+ Background="#F8FAFC" FontFamily="Segoe UI" FontSize="14">
+
+    <DockPanel LastChildFill="True">
+        <Border DockPanel.Dock="Top" Background="#172554" Padding="22">
+            <TextBlock Text="Новая заявка на ремонт" Foreground="White" FontSize="25" FontWeight="Bold"/>
+        </Border>
+        <Border DockPanel.Dock="Bottom" Background="#E2E8F0" Padding="12">
+            <TextBlock Text="Диагностика не назначена" Foreground="#475569"/>
+        </Border>
+        <Grid Margin="18">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="230"/>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,16,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="White" Padding="18" BorderBrush="#E2E8F0" BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Margin="0,0,12,8">
+                                <TextBlock Text="ФИО клиента"/>
+                                <TextBox Margin="0,5,0,0" Height="30"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="12,0,0,8">
+                                <TextBlock Text="Телефон"/>
+                                <TextBox Margin="0,5,0,0" Height="30"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Margin="0,0,12,8">
+                                <TextBlock Text="Тип устройства"/>
+                                <ComboBox Margin="0,5,0,0" Height="30" SelectedIndex="0">
+                                    <ComboBoxItem>Ноутбук</ComboBoxItem>
+                                    <ComboBoxItem>Смартфон</ComboBoxItem>
+                                    <ComboBoxItem>Планшет</ComboBoxItem>
+                                    <ComboBoxItem>Телевизор</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Grid.Column="1" Margin="12,0,0,8">
+                                <TextBlock Text="Производитель"/>
+                                <ComboBox Margin="0,5,0,0" Height="30" SelectedIndex="0">
+                                    <ComboBoxItem>Lenovo</ComboBoxItem>
+                                    <ComboBoxItem>Apple</ComboBoxItem>
+                                    <ComboBoxItem>Samsung</ComboBoxItem>
+                                    <ComboBoxItem>ASUS</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Grid.Row="2" Margin="0,0,12,8">
+                                <TextBlock Text="Модель"/>
+                                <TextBox Margin="0,5,0,0" Height="30" Text="IdeaPad 3"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="2" Grid.Column="1" Margin="12,0,0,8">
+                                <TextBlock Text="Серийный номер"/>
+                                <TextBox Margin="0,5,0,0" Height="30"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="3" Margin="0,0,12,8">
+                                <TextBlock Text="Дата приёма"/>
+                                <DatePicker Margin="0,5,0,0"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="3" Grid.Column="1" Margin="12,0,0,8">
+                                <TextBlock Text="Состояние корпуса"/>
+                                <ComboBox Margin="0,5,0,0" Height="30" SelectedIndex="0">
+                                    <ComboBoxItem>Хорошее</ComboBoxItem>
+                                    <ComboBoxItem>Есть царапины</ComboBoxItem>
+                                    <ComboBoxItem>Повреждён</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Margin="0,5,0,0">
+                                <TextBlock Text="Описание неисправности"/>
+                                <TextBox Height="85" Margin="0,5,0,0" AcceptsReturn="True" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="1" Background="White" CornerRadius="10" Padding="18" Margin="0,14,0,0" BorderBrush="#E2E8F0" BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="Комплектность" FontSize="17" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                            <WrapPanel>
+                                <CheckBox Content="Зарядное устройство" Margin="0,0,18,10" IsChecked="True"/>
+                                <CheckBox Content="Кабель" Margin="0,0,18,10" IsChecked="True"/>
+                                <CheckBox Content="Чехол" Margin="0,0,18,10"/>
+                                <CheckBox Content="Коробка" Margin="0,0,18,10"/>
+                                <CheckBox Content="Документы" Margin="0,0,18,10"/>
+                                <CheckBox Content="Дополнительный аккумулятор" Margin="0,0,18,10"/>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </ScrollViewer>
+            <Border Grid.Column="1" Background="#EFF6FF" CornerRadius="10" Padding="16" BorderBrush="#BFDBFE" BorderThickness="1">
+                <StackPanel>
+                    <TextBlock Text="Действия" FontSize="18" FontWeight="Bold" Foreground="#1E3A8A" Margin="0,0,0,14"/>
+                    <Button Content="Принять" Height="38" Margin="0,0,0,8" Background="#2563EB" Foreground="White"/>
+                    <Button Content="Печать квитанции" Height="38" Margin="0,0,0,8"/>
+                    <Button Content="Очистить" Height="38" Margin="0,0,0,8"/>
+                    <Button Content="Закрыть" Height="38" Margin="0,0,0,22"/>
+                    <Separator Margin="0,0,0,14"/>
+                    <TextBlock Text="Заявка № 1042" FontWeight="Bold" FontSize="16" Margin="0,0,0,8"/>
+                    <TextBlock Text="Мастер не назначен" Foreground="#64748B" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>
